@@ -20,14 +20,16 @@ description ("It will run the containers")
    steps {
         shell('''cd /srv/djangoapp
 sudo docker pull rohitghumare64/devopsblog:v1
-#sudo docker run -dit --name c1 --privileged -p 1234:8080  devopsblog:v1
+#sudo docker run -dit --name c1 --privileged -p 1234:8080  rohitghumare64/devopsblog:v1
 if sudo docker ps | grep c1
 then
 sudo docker rm -f c1
-sudo docker run -dit --name c1 --privileged -p 1234:8080 devopsblog:v1
+sudo docker run -dit --name c1 --privileged -p 1234:8080 rohitghumare64/devopsblog:v1
+python3 manage.py runserver
 else
 #sudo docker rm -f c1
-sudo docker run -dit --name c1 --privileged -p 1234:8080 devopsblog:v1
+sudo docker run -dit --name c1 --privileged -p 1234:8080 rohitghumare64/devopsblog:v1
+python3 manage.py runserver
 fi
 ''')
     }
