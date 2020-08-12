@@ -14,7 +14,6 @@ description ("It will pull code from GitHub")
 
 job("task_job2_launchpod") {
 description ("It will run the containers")
-label('server management')
   triggers {
         upstream('task_job1_gitpull', 'SUCCESS')
     }
