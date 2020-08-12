@@ -19,8 +19,8 @@ description ("It will run the containers")
     }
    steps {
         shell('''cd /srv/djangoapp
-docker pull rohitghumare64/devopsblog:v1
-docker run -it --name c1 --privileged -p 1234:8080  devopsblog:v1
+sudo docker pull rohitghumare64/devopsblog:v1
+sudo docker run -it --name c1 --privileged -p 1234:8080  devopsblog:v1
 if sudo docker ps | c1
 then
 sudo docker rm -f devopsblog
