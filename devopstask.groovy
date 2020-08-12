@@ -84,7 +84,7 @@ steps {
 }
 
 
-buildPipelineView('devo111222') {
+buildPipelineView('devm111222') {
     title('DevOps')
     displayedBuilds(5)
     selectedJob('task_job1_gitpull')
