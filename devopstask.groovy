@@ -21,7 +21,7 @@ description ("It will run the containers")
         shell('''cd /srv/djangoapp
 sudo docker pull rohitghumare64/devopsblog:v1
 #sudo docker run -dit --name c1 --privileged -p 1234:8080  devopsblog:v1
-if sudo docker ps | c1
+if sudo docker ps | grep c1
 then
 sudo docker rm -f c1
 sudo docker run -dit --name c1 --privileged -p 1234:8080 devopsblog:v1
@@ -43,7 +43,7 @@ description ("It will test if conatainer is running else send a mail")
         upstream('task_job2_launchpod', 'SUCCESS')
     }
 steps {
-        shell('''if sudo docker ps | c1
+        shell('''if sudo docker ps | grep c1
 then
 echo "send to production"
 else
@@ -85,7 +85,7 @@ steps {
 }
 
 
-buildPipelineView('devpsr111222') {
+buildPipelineView('devpsrg111222') {
     title('DevOps')
     displayedBuilds(5)
     selectedJob('task_job1_gitpull')
