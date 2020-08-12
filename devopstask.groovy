@@ -26,9 +26,9 @@ then
 sudo docker rm -f c1
 sudo docker run -dit --name c1 --privileged -p 1234:8080 devopsblog:v1
 python manage.py runserver
-#else
-#sudo docker run -dit --name c2 --privileged -p 1235:8080 devopsblog:v1
-#python manage.py runserver
+else
+sudo docker run -dit --name c2 --privileged -p 1235:8080 devopsblog:v1
+python manage.py runserver
 fi
 ''')
     }
@@ -84,7 +84,7 @@ steps {
 }
 
 
-buildPipelineView('devm111222') {
+buildPipelineView('devp111222') {
     title('DevOps')
     displayedBuilds(5)
     selectedJob('task_job1_gitpull')
