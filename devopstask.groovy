@@ -20,10 +20,10 @@ description ("It will run the containers")
    steps {
         shell('''cd /srv/djangoapp
 sudo docker pull rohitghumare64/devopsblog:v1
-sudo docker run -dit --name c1 --privileged -p 1234:8080  devopsblog:v1
+#sudo docker run -dit --name c1 --privileged -p 1234:8080  devopsblog:v1
 if sudo docker ps | c1
 then
-sudo docker rm -f devopsblog
+sudo docker rm -f c1
 sudo docker run -dit --name c1 --privileged -p 1234:8080 devopsblog:v1
 python manage.py runserver
 #else
@@ -84,7 +84,7 @@ steps {
 }
 
 
-buildPipelineView('devv111222') {
+buildPipelineView('devo111222') {
     title('DevOps')
     displayedBuilds(5)
     selectedJob('task_job1_gitpull')
